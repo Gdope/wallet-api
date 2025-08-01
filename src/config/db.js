@@ -3,7 +3,9 @@ import { neon } from "@neondatabase/serverless";
 import "dotenv/config";
 
 // Creates a SQL connection using our DB URL
-export const sql = neon(process.env.DATABASE_URL);
+const sql = neon(
+  "postgresql://neondb_owner:npg_P9wJrIZjl7Ms@ep-aged-boat-ad6no56o-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+);
 
 export async function initDB() {
   try {
